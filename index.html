@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Барбершоп "Бородинский"</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
 <header class="main-header">
@@ -27,7 +30,7 @@
 <main class="container">
 
   <div class="index-logo">
-    <img src="img/index-logo" width="368" height="204" alt="Барбершоп Барадинский">
+    <img src="img/logo-bg.png" width="368" height="204" alt="Барбершоп Бородинский">
   </div>
 
   <section class="features clearfix">
@@ -55,7 +58,7 @@
       <ul class="news-preview">
         <li>
           <p>Нам наконец-то завезли Ягермайстер! Теперь вы
-          можете пропустить стаканчик во время стрижкию</p>
+          можете пропустить стаканчик во время стрижки</p>
           <time datetime="2016-01-11">11 января</time>
         </li>
         <li>
@@ -72,7 +75,7 @@
       <h2 class="index-content-title">Фотогалерея</h2>
       <div class="gallery">
         <figure class="galery-content">
-          <img src="img/foto-1.jpg" width="286" height="164">
+          <img src="img/gallery.jpg" width="286" height="164">
         </figure>
         <button class="btn gallery-prev">Назад</button>
         <button class="btn gallery-next">Вперед</button>
@@ -102,12 +105,13 @@
         <h2 class="index-content-title">Записаться</h2>
         <p>Укажите желаемую дату и время и мы свяжемся с вами для
           подтверждения брони</p>
-        <form class="appointment-form" action="http://echo.htm;academy.ru"
-              method="post">
+        <form class="appointment-form" action="http://echo.htmlacademy.ru" method="post">
           <input type="text" name="data" value="" placeholder="Дата">
           <input type="text" name="data" value="" placeholder="Время">
           <input type="text" name="data" value="" placeholder="Ваше имя">
           <input type="tel" name="phone" value="" placeholder="Телефон">
+
+          <button class="btn" type="submit" value="Отправить">Отправить</button>
         </form>
       </div>
     </div>
