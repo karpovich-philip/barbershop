@@ -1,17 +1,24 @@
 html, body {
     min-width: 1122px;
-    min-height: 1750px;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background: #555555 url("barbershop-index-grid") no-repeat 50% 3px;
-    background-size: 1122px;
+    background: #000000 url("img/barbershop-index-grid.jpg") no-repeat center top;
+    min-width: 960px;
+    font-family: "PT Sans narrow", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
 .main-header {
     margin-bottom: 60px;
+    color: #ffffff;
+    background-color: #000000;
 }
 
 .clearfix::after {
@@ -24,7 +31,6 @@ body {
     width: 940px;
     padding: 0 10px;
     margin: 0 auto;
-    background-color: aqua;
 }
 
 .main-navigation {
@@ -33,30 +39,118 @@ body {
     min-height: 70px;
 }
 
+.main-navigation a {
+    display: block;
+    padding: 25px 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.main-navigation a:hover {
+    background: #242424;
+}
+
+.main-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+.main-navigation li {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    vertical-align: top;
+}
+
 .user-block {
     float: right;
-    width: 150px;
+    width: 140px;
     min-height: 70px;
+}
+
+.login {
+    position: relative;
+    display: inline-block;
+    padding: 25px 20px;
+    padding-left: 50px;
+    font-size: 16px;
+    line-height: 20px;
+    vertical-align: top;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.login:hover {
+    background-color: #242424;
+}
+
+/*.login::before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top: 28px;*/
+    /*left: 20px;*/
+    /*width: 18px;*/
+    /*height: 18px;*/
+    /*background: url("img/sprite.png") no-repeat;*/
+    /*background-position: 10px 20px ;*/
+    /*opacity: 0.3;*/
+/*}*/
+
+.login:hover::after {
+    opacity: 1;
 }
 
 .index-logo {
     width: 368px;
     height: 204px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
 
+.index-logo img {
+    width: 368px;
+    height: 204px;
 }
 
 .features-item {
     float: left;
     width: 300px;
-    min-height: 175px;
     margin-right: 20px;
+    text-align: center;
 }
 
 .features-item:last-child {
     margin-right: 0;
+}
+
+.features-name {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    padding-bottom: 35px;
+
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.features-item p {
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+.features-name::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    background: #ffffff;
+    transform: rotate(45deg);
 }
 
 .features {
@@ -78,6 +172,134 @@ body {
 .index-content {
     padding: 50px 80px;
     margin-bottom: 35px;
+    color: #000000;
+    background: url("img/shadow.png") no-repeat center,
+    #f8f5f2 url("img/background.png") repeat;
+}
+
+.index-content-title {
+    font-size: 30px ;
+    line-height: 42px;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.index-content p {
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.news-preview {
+    margin: 0;
+    padding: 0;
+    padding-right: 35px;
+    list-style: none;
+}
+
+.news-preview li {
+    margin-bottom: 25px;
+}
+
+.news-preview time {
+    text-transform: none;
+    font-weight: 400;
+
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 33px;
+    margin-right: 16px;
+    vertical-align: top;
+    text-align: center;
+    font-family: "PT Sans narrow", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background: #000000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    background: #663d15;
+}
+
+.btn:disabled,
+.btn:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.btn:disabled:hover,
+.btn:disabled:hover {
+    background: #000000;
+}
+
+.gallery {
+    position: relative;
+    height: 260px;
+}
+
+.galery-content {
+    margin: 0;
+    height: 164px;
+    background-color: #cccccc;
+    border: 7px solid #ffffff;
+}
+
+.galery-content img {
+    width: 286px;
+    height: 164px;
+}
+
+.gallery .btn {
+    position: absolute;
+    bottom: 0;
+    width: 140px;
+    margin: 0;
+}
+
+.gallery-prev {
+    left: 0;
+}
+
+.gallery-next {
+    right: 0;
+}
+
+.appointment-form input {
+    float: left;
+    width: 106px;
+    padding: 7px 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.appointment-form input:hover {
+    border: 2px solid #663d15;
+}
+
+.appointment-form input:nth-child(2n) {
+    margin-right: 0;
+}
+
+.appointment-form .btn {
+    clear: both;
+    width: 100%;
 }
 
 .footer-contacts {
@@ -86,18 +308,86 @@ body {
     margin-right: 60px;
 }
 
+.footer-contacts a {
+    color: #ffffff;
+}
+
+.footer-contacts a:hover {
+    text-decoration: none;
+}
+
 .footer-social {
     width: 180px;
     float: left;
+    text-align: center;
+}
+
+.footer-social p {
+    margin: 0;
+    margin-bottom: 15px;
 }
 
 .footer-copyright {
-    width: 180px;
     float: right;
 }
+
+.footer-copyright p {
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.footer-copyright .btn {
+    margin-right: 0;
+}
+
+.social-btn {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    margin: 0 2px;
+    background: #000000 url("") no-repeat center;
+
+    font-size: 0;
+    vertical-align: top;
+    text-decoration: none;
+}
+
+/*.social-btn-vk {*/
+    /*background-position: ;*/
+/*}*/
+
+/*.social-btn-fb {*/
+    /*background-position: ;*/
+/*}*/
+
+/*.social-btn-inst {*/
+    /*background-position: ;*/
+/*}*/
+
+/*.social-btn:hover {*/
+    /*background-color: #ffffff;*/
+/*}*/
+
+/*.social-btn-vk:hover {*/
+    /*background-position: ;*/
+/*}*/
+
+/*.social-btn-fb:hover {*/
+    /*background-position: ;*/
+/*}*/
+
+/*.social-btn-inst:hover {*/
+    /*background-position: ;*/
+/*}*/
+
+
 
 .main-footer {
     margin-top: 65px;
     padding-top: 60px;
     padding-bottom: 40px;
+
+    color: #ffffff;
+    background: #222222 url("img/footer.png") repeat;
 }
