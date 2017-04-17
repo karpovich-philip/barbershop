@@ -86,20 +86,44 @@ body {
     background-color: #242424;
 }
 
-/*.login::before {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*top: 28px;*/
-    /*left: 20px;*/
-    /*width: 18px;*/
-    /*height: 18px;*/
-    /*background: url("img/sprite.png") no-repeat;*/
-    /*background-position: 10px 20px ;*/
-    /*opacity: 0.3;*/
-/*}*/
+.login::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    width: 18px;
+    height: 18px;
+    background: url("img/spritesocial.png") no-repeat;
+    background-position: 0 -106px ;
+    opacity: 0.3;
+}
 
-.login:hover::after {
+.login:hover::before {
     opacity: 1;
+}
+
+.main-navigation .active {
+    position: relative;
+    background: none;
+}
+
+.main-navigation .active::after {
+    position: absolute;
+    content: "";
+    right: 20px;
+    left: 20px;
+    bottom: 0;
+    height: 5px;
+    background: #ffffff;
+}
+
+.main-navigation .active a:hover {
+    background: none;
+}
+
+.main-navigation .active span {
+    display: block;
+    padding: 25px 20px;
 }
 
 .index-logo {
@@ -130,7 +154,6 @@ body {
     display: block;
     margin-bottom: 30px;
     padding-bottom: 35px;
-
     font-size: 30px;
     line-height: 42px;
 }
@@ -341,53 +364,254 @@ body {
     margin-right: 0;
 }
 
+.footer-copyright .btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
 .social-btn {
     display: inline-block;
     width: 43px;
     height: 43px;
     margin: 0 2px;
-    background: #000000 url("") no-repeat center;
-
+    background: #000000 url("img/spritesocial.png") no-repeat center;
     font-size: 0;
     vertical-align: top;
     text-decoration: none;
 }
 
-/*.social-btn-vk {*/
-    /*background-position: ;*/
-/*}*/
+.social-btn-vk {
+    background-position: 0 0;
+}
 
-/*.social-btn-fb {*/
-    /*background-position: ;*/
-/*}*/
+.social-btn-fb {
+    background-position: -49px 0;
+}
 
-/*.social-btn-inst {*/
-    /*background-position: ;*/
-/*}*/
+.social-btn-inst {
+    background-position: -98px 0;
+}
 
-/*.social-btn:hover {*/
-    /*background-color: #ffffff;*/
-/*}*/
+.social-btn:hover {
+    background-color: #ffffff;
+}
 
-/*.social-btn-vk:hover {*/
-    /*background-position: ;*/
-/*}*/
+.social-btn-vk:hover {
+    background-position:0 -63px;
+}
 
-/*.social-btn-fb:hover {*/
-    /*background-position: ;*/
-/*}*/
+.social-btn-fb:hover {
+    background-position:-49px -63px;
+}
 
-/*.social-btn-inst:hover {*/
-    /*background-position: ;*/
-/*}*/
-
-
+.social-btn-inst:hover {
+    background-position:-98px -63px;
+}
 
 .main-footer {
     margin-top: 65px;
     padding-top: 60px;
     padding-bottom: 40px;
-
     color: #ffffff;
     background: #222222 url("img/footer.png") repeat;
+    box-shadow: inset 0 20px 40px -2px #000000;
+}
+
+.modal-content {
+    display: none;
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    z-index: 30;
+    margin-left: -230px;
+    width: 300px;
+    padding: 50px 80px;
+    color: #000000;
+    background: url("img/background.png") repeat;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0)}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px)}
+    20%, 40%, 60%, 80% {transform: translateX(10px)}
+}
+
+.modal-error {
+    animation: shake 0.6s;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(-2000px)}
+    70% {transform: translateY(30px)}
+    90% {transform: translateY(-10px)}
+    100% {transform: translateY(0px)}
+}
+
+.modal-content-show {
+    display: block;
+    animation: bounce 1s;
+}
+
+.modal-content-map {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    width: 766px;
+    height: 561px;
+    margin-top: -280px;
+    margin-left: -390px;
+    border: 7px solid #ffffff;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.5);
+}
+
+.modal-content-close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    font-size: 0;
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.modal-content-close::before,
+.modal-content-close::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    width: 19px;
+    height: 3px;
+    background-color: #d0d0d0;
+    border-radius: 1px;
+
+}
+
+.modal-content-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-content-close::after {
+    transform: rotate(-45deg)
+}
+
+.modal-content h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 42px;
+}
+
+.modal-content p {
+    margin: 0;
+    margin-bottom: 14px;
+}
+
+.modal-content .login-form {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 236px;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    padding-right: 40px;
+
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "PT Sans narrow", "Arial", sans-serif;
+    color: #000000;
+    text-transform: uppercase;
+
+    background-color: #f9f6f3;
+    border: 2px solid #000000;
+    outline: none;
+}
+
+.login-form input:focus {
+    border-color: #663d15;
+}
+
+.login-form input.icon-user {
+    background-image: url("img/logps.png");
+    background-repeat: no-repeat;
+    background-position: 95% 15px;
+}
+
+.login-form input.icon-password {
+    background-image: url("img/logps.png");
+    background-repeat: no-repeat;
+    background-position: 95% -25px;
+}
+
+.login-form .restore {
+    float: right;
+    color: #000000;
+}
+
+.login-form .btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.login-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.login-checkbox {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.login-checkbox:hover {
+    color: #663d15;
+}
+
+.login-checkbox input[type="checkbox"] + .checkbox-indicator {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #000000;
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before,
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    width: 15px;
+    height: 2px;
+    background-color: #000000;
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before {
+    transform: rotate(45deg);
+}
+
+.login-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
+    transform: rotate(-45deg);
 }
